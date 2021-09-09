@@ -1,23 +1,46 @@
 
 import './App.css';
 
+const data = [
+{
+  image: 'https://s.auto.drom.ru/i24261/pubs/4483/85279/3731758.jpg',
+  title: '«Жигули» за 10 миллионов, или Как увеличить стоимость автомобиля в 1000 раз',
+  desc: 'Все началось с «Двойки», но другой. Это был первый автомобиль Дмитрия. Машина нравилась ему дизайном, ходовыми качествами, универсальностью, естественно, ценой и какой-то своей неповторимой аурой. Увы, за кузовом Дмитрий не уследил, и по прошествии двух лет «Двойка» просто развалилась. Обидно, но пришлось искать другой автомобиль.'
+},
+{
+  image: 'https://s.auto.drom.ru/i24260/pubs/4483/85150/3727839.jpg',
+  title: 'Geely Coolray против Opel Crossland. Трехцилиндровые',
+  desc: 'Geely Coolray за половину этого года уже успел обогнать Atlas и стать самым продаваемым автомобилем марки в России. Чем так нравится нашим соотечественникам Кулрей? И что сможет противопоставить ему новинка от Opel, которая играет в том же псевдокроссоверном сегменте и тоже с тремя цилиндрами под капотом?'
+},
+{
+  image: 'https://s.auto.drom.ru/i24261/pubs/4483/85287/3732189.jpg',
+  title: 'Новый мир. Первый тест-драйв электрического UAZ Hunter139',
+  desc: 'Этот электрический внедорожник называется, конечно, не UAZ Hunter EV, а MWM Spartan EV, и выпущен он чешской фирмой MW Motors в количестве всего-то двух штук. Как ни странно, визит Спартана в Россию — история вовсе не анекдотическая, не смех и даже — не грех, в отличие от самой разработки, о чем ниже. Электрифицированный в Чехии «уазик» привезли на «историческую родину» в рамках празднования 80-летия Ульяновского автомобильного завода, которое выпадает на ноябрь, однако есть и куда более весомые «привязки».'
+}
+]
+
+const Feed = ({image,title,desc}) => {
+return (
+<div className='News'>
+<img src={image} alt={title}/>
+<div><h2>{title}</h2>
+<p>{desc}</p>
+</div></div>
+)
+}
+
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src="https://cdn3.f-cdn.com/contestentries/114457/10540864/5446245b3d5f7_thumb900.jpg" className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+              <img src="https://cdn3.f-cdn.com/contestentries/114457/10540864/5446245b3d5f7_thumb900.jpg" className="App-logo" alt="logo" />
+        <h1>
+  лучшие мемы автомира
+        </h1>
       </header>
+      <div className="App-content">
+      {data.map(props => Feed(props))}
+      </div>
     </div>
   );
 }
